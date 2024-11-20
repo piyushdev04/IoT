@@ -1,0 +1,27 @@
+<html>
+<head>
+<title> GPIO CONTROL PINS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body style= "text-align: center;">
+<img src="{{url_for('static',filename='viitlogo.png')}}" width="349px" height="193"/>
+<h1>SMART HOME AUTOMATION USING RASPBERRY PI<h1>
+<h4>NAME OF STUDENT: John Doe </h4>
+<h4>ROLLNO.: 01234</h4>
+<h5> PRN: 01234</h5>
+<h2> STATUS OF ACTUATORS<h2>
+<h3> RED LED --> {{ledRed}}</h3>
+<h3> YELLOW LED--> {{ledYellow}} </h3>
+<h3> GREEN LED --> {{ledGreen}} </h3>
+<h2> LED CONTROL</h2>
+<h3> RED LED CONTROL - <a href="/ledRed/on" class="button">TURN ON</a>
+<a href="/ledRed/off" class="button">TURN OFF</a>
+</h3>
+<h3> YELLOW LED CONTROL - <a href="/ledYellow/on" class="button">TURN ON</a>
+<a href="/ledYellow/off" class="button">TURN OFF</a>
+</h3>
+<h3> GREEN LED CONTROL - <a href="/ledGreen/on" class="button">TURN ON</a>
+<a href="/ledGreen/off" class="button">TURN OFF</a>
+</h3>
+</body>
+</html>
