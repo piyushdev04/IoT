@@ -33,3 +33,7 @@ void loop() {
   Serial.print(temperature);
   Serial.println(" C");
 }
+
+<!-- VCC → 5V
+GND → GND
+Data Pin → D2 -->
