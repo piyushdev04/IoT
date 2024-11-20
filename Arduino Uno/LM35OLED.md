@@ -1,77 +1,36 @@
 #include <Wire.h>
-#include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define SCREEN_WIDTH 128 // OLED display width
-#define SCREEN_HEIGHT 64 // OLED display height
-#define OLED_RESET    -1 // Reset pin not used
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
-// Pin for temperature sensor
 const int tempSensorPin = A0;
 
-// Variables for temperature readings
-float tempCelsius = 0.0;
-float tempFahrenheit = 0.0;
-unsigned long previousMillis = 0;
-const unsigned long interval = 2000; // Logging interval (2 seconds)
-
-// Function to read temperature in Celsius
-float readTemperature() {
-  int sensorValue = analogRead(tempSensorPin);
-  return (sensorValue * 5.0 / 1023.0) * 100.0; // Convert to Celsius
+void setup() {
+  Serial.begin(9600);
+  if (!display.begin(SSD1306_I2C_ADDRESS, 0x3C)) {
+    while (true); // Halt if OLED initialization fails
+  }
+  display.clearDisplay();
 }
 
-void setup() {
-  // Initialize Serial Monitor
-  Serial.begin(9600);
+void loop() {
+  float tempC = analogRead(tempSensorPin) * 5.0 / 1023.0 * 100.0;
+  float tempF = tempC * 1.8 + 32;
 
-  // Initialize OLED Display
-  if (!display.begin(SSD1306_I2C_ADDRESS, 0x3C)) {
-    Serial.println(F("OLED initialization failed!"));
-    while (true);
-  }
+  // Display on OLED
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0, 0);
-  display.print("Initializing...");
-  display.display();
-  delay(2000);
-}
-
-void loop() {
-  // Read temperature
-  tempCelsius = readTemperature();
-  tempFahrenheit = tempCelsius * 1.8 + 32;
-
-  // Display values on OLED
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.println("Temperature:");
-  display.setCursor(0, 10);
-  display.print("Celsius: ");
-  display.print(tempCelsius, 2);
-  display.println(" C");
-  display.setCursor(0, 30);
-  display.print("Fahrenheit: ");
-  display.print(tempFahrenheit, 2);
-  display.println(" F");
+  display.printf("Temp: %.2f C\n%.2f F", tempC, tempF);
   display.display();
 
-  // Log data in the Serial Monitor
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= interval) {
-    previousMillis = currentMillis;
-    Serial.print("Celsius: ");
-    Serial.print(tempCelsius, 2);
-    Serial.print(" C, ");
-    Serial.print("Fahrenheit: ");
-    Serial.print(tempFahrenheit, 2);
-    Serial.println(" F");
-  }
+  // Log to Serial Monitor
+  Serial.printf("Celsius: %.2f C, Fahrenheit: %.2f F\n", tempC, tempF);
 
-  delay(500); // Update display frequency
+  delay(2000); // Update every 2 seconds
 }
 
 <!-- Circuit Connections
