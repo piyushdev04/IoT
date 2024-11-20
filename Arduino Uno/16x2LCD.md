@@ -13,11 +13,11 @@ void setup() {
 void loop() {
   // Display the first line
   lcd.setCursor(0, 0);
-  lcd.print("Chetan Dalal");
+  lcd.print("John Doe");
 
   // Display the second line
   lcd.setCursor(0, 1);
-  lcd.print("GR.NO:22210872");
+  lcd.print("GR.NO:01234");
 }
 
 <!-- VCC → 5V
