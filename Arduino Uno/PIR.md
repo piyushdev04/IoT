@@ -24,9 +24,9 @@ void loop() {
   delay(500);  // Small delay to avoid serial flooding
 }
 
-<!-- VCC → Connect to 5V on Arduino.
-GND → Connect to GND on Arduino.
-OUT (Signal Pin) → Connect to Pin 2
-LED:
-Anode (long leg) → Connect to Pin 13
-Cathode (short leg) → Connect to GND -->
+<!-- VCC → 5V
+GND → GND
+OUT → Pin 2
+
+Anode (long leg) → Pin 13
+Cathode (short leg) → GND -->
