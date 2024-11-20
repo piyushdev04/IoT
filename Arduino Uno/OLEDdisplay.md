@@ -22,7 +22,7 @@ void setup() {
 
 void loop() {}
 
-<!-- VCC → Connect to 5V on Arduino
-GND → Connect to GND on Arduino
-SCL (Clock Pin) → Connect to A5
-SDA (Data Pin) → Connect to A4 -->
+<!-- VCC → 5V
+GND → GND
+SCL → A5
+SDA  → A4 -->
