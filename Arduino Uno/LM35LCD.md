@@ -31,12 +31,12 @@ void loop() {
   delay(2000); // Update every 2 seconds
 }
 
-<!-- 1. I.M35 Temperature Sensor:
-VCC (Power) → Connect to 5V on Arduino.
-GND (Ground) → Connect to GND on Arduino.
-OUT (Signal) → Connect to A0 (Analog Pin 0) on Arduino.
+<!-- 
+VCC → 5V
+GND → GND
+OUT → A0
 2. I2C LCD:
-SDA (Data) → Connect to A4 on Arduino (for Uno/Nano).
-SCL (Clock) → Connect to A5 on Arduino (for Uno/Nano).
-VCC (Power) → Connect to 5V on Arduino.
-GND (Ground) → Connect to GND on Arduino. -->
+SDA → A4
+SCL → A5
+VCC → 5V
+GND → GND -->
