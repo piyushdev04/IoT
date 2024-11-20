@@ -14,9 +14,9 @@ void setup() {
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0, 10);
-  display.println(F("Chetan Dalal"));
-  display.println(F("22210872"));
-  display.println(F("Roll No. 311012"));
+  display.println(F("John Doe"));
+  display.println(F("PRN No. 01234"));
+  display.println(F("Roll No. 01234"));
   display.display();
 }
 
