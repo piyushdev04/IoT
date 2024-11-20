@@ -35,7 +35,7 @@ void loop() {
 VCC → 5V
 GND → GND
 OUT → A0
-2. I2C LCD:
+
 SDA → A4
 SCL → A5
 VCC → 5V
