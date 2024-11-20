@@ -53,7 +53,7 @@ void loop() {
 
 
 
-<!-- VCC → Connect to 5V on Arduino.
-GND → Connect to GND on Arduino.
-Trig (Trigger Pin) → Connect to Pin 9 on Arduino.
-Echo (Echo Pin) → Connect to Pin 10 on Arduino. -->
+<!-- VCC → 5V
+GND → GND
+Trig → Pin 9
+Echo → Pin 10 -->
