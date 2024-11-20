@@ -73,3 +73,16 @@ void loop() {
 
   delay(500); // Update display frequency
 }
+
+<!-- Circuit Connections
+I.M35 Sensor:
+
+VCC → 5V on Arduino.
+GND → GND on Arduino.
+OUT → A0 on Arduino (analog pin to read temperature).
+I2C OLED Display:
+
+SDA → A4 (Uno/Nano I2C data line).
+SCL → A5 (Uno/Nano I2C clock line).
+VCC → 5V.
+GND → GND. -->
