@@ -17,7 +17,7 @@ void loop() {
   delay(1000);  // Delay for 1 second
 }
 
-<!-- YL-69 or HL-69 Soil Moisture Sensor:
-VCC (Power) → Connect to 5V on Arduino.
-GND (Ground) → Connect to GND on Arduino.
-Analog Output (A0) → Connect to A0 (Analog Pin 0) on Arduino. -->
+<!-- 
+VCC → 5V
+GND → GND
+A0 → A0 -->
